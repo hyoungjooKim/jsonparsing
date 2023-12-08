@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.3'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id 'java'
+}
+
+group = 'com.dannyjae'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0' // 적절한 버전 사용
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+    // json-simple
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
